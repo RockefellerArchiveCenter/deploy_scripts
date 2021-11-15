@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+# get index
+if [ -z "$PORT" ]
+then
+      curl http://localhost
+else
+      curl http://localhost:${PORT}
+fi

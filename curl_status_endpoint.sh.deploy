@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+# get status endpoint
+if [ -z "$PORT" ]
+then
+      curl http://localhost/status
+else
+      curl http://localhost:${PORT}/status
+fi
