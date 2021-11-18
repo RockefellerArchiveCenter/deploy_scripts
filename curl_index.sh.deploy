@@ -6,5 +6,5 @@ if [ -z "$PORT" ]
 then
       curl http://localhost
 else
-      curl http://localhost:${PORT}
+      curl http://localhost:${APPLICATION_PORT}
 fi
