@@ -2,7 +2,7 @@
 set -e
 
 # get index
-if [ -z "$PORT" ]
+if [ -z "$APPLICATION_PORT" ]
 then
       curl http://localhost
 else
