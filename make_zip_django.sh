@@ -20,7 +20,10 @@ if [ ! -f $ZIP_DIR/$ZIP_NAME ]; then
     Dockerfile \
     entrypoint.sh \
     *.png \
-    wait-for-it.sh
+    wait-for-it.sh \
+    sample_bags \
+    test_bags \
+    scripts
   find . -type d -name __pycache__ -exec rm -r {} \+
 
   # create zip file
