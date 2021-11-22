@@ -2,6 +2,7 @@
 set -e
 
 for TEMPLATE in ${APPLICATION_NAME}/config.py.deploy \
+  .env.deploy \
   appspec.yml.deploy \
   deploy_scripts/*.deploy
 do
