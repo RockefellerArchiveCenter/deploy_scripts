@@ -2,4 +2,4 @@
 set -e
 
 # restart apache
-sudo supervisorctl restart celery celerybeat
+sudo supervisorctl start celery celerybeat
