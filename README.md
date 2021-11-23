@@ -5,6 +5,9 @@ Bash scripts used in automated deployments.
 These scripts are intended to be used in conjunction with AWS CodeDeploy to
 implement continuous deployment, and currently focus on Django and React applications.
 
+Depending on the user that runs these scripts, additional modifications may need
+to be made to allow that user to execute scripts with `sudo` permissions.
+
 It is assumed that applications are served up via Apache.
 
 ## Environment Variables
