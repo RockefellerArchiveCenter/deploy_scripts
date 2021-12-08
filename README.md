@@ -8,6 +8,10 @@ implement continuous deployment, and currently focus on Django and React applica
 Depending on the user that runs these scripts, additional modifications may need
 to be made to allow that user to execute scripts with `sudo` permissions.
 
+The `substitute_env.sh` script will remove the `.deploy` from the end of scripts. Remove
+that from the end of a filename when pointing to a script if using a script in
+conjunction with `substitute_env.sh`.
+
 It is assumed that applications are served up via Apache.
 
 ## Environment Variables
