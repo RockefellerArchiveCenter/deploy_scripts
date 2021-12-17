@@ -4,7 +4,9 @@ set -e
 # stop all running cron jobs
 if [[ `pgrep -f ${APPLICATION_NAME}.*runcrons` ]]; then
   sudo pkill -f ${APPLICATION_NAME}.*runcrons
-  sudo rm ${DJANGO_CRON_LOCKFILE_PATH}/*.lock
+  if [ -f ${DJANGO_CRON_LOCKFILE_PATH}/*.lock ]; then
+    sudo rm ${DJANGO_CRON_LOCKFILE_PATH}/*.lock
+  fi
 fi
 
 # stop cron
