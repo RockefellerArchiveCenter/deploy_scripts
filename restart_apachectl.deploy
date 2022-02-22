@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+# restart apache, targetting app-specific configs
+/etc/${APPLICATION_NAME}-${APPLICATION_PORT}/apachectl restart

@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+cd ${ROOT_DIR}
+
+# Create Apache configs using mod_wsgi
+if [ -f /etc/${APPLICATION_NAME}-${APPLICATION_PORT}/include.conf ]
+then
+  env/bin/python manage.py runmodwsgi --setup-only --port=${APPLICATION_PORT} \
+      --server-name=localhost \
+      --server-root=/etc/${APPLICATION_NAME}-${APPLICATION_PORT} \
+      --include-file=/etc/${APPLICATION_NAME}-${APPLICATION_PORT}/include.conf
+else
+  env/bin/python manage.py runmodwsgi --setup-only --port=${APPLICATION_PORT} \
+      --server-name=localhost \
+      --server-root=/etc/${APPLICATION_NAME}-${APPLICATION_PORT}
+fi
