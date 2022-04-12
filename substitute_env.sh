@@ -12,3 +12,5 @@ do
     rm $TEMPLATE
   fi
 done
+
+chmod +x deploy_scripts/*.sh
