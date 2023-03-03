@@ -31,7 +31,9 @@ The following environment variables are required for Container deploys.
 - AWS_REGION - the AWS Region which contains the ECR Registry
 - AWS_ACCESS_KEY_ID - an AWS Access Key for a user with permissions to push to the ECR Registry
 - AWS_SECRET_ACCESS_KEY - an AWS Secret Access Key for a user with permissions to push to the ECR Registry
-- DEPLOYMENT_NAME - name for the deployed pod in Kubernetes
+- CLOUDFRONT_DISTRIBUTION_ID - an identifier for a CloudFront Distribution whose cache should be invalidadated (invalidate_cloudfront_cache.sh only)
+- LAMBDA_FUNCTION_NAME - the name of an AWS Lambda function to which the image should be deployed (deploy_image_lambda.sh only)
+- DEPLOYMENT_NAME - name for the deployed pod in Kubernetes (deploy_image_k8s.sh only)
 - DOCKER_REPO - the name of the repository in the registry to which to push
 - TIMESTAMP - current timestamp (should be generated and set once in a CI pipeline)
 
