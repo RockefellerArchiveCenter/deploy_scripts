@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
-REPO_NAME = $1
-CURRENT_TAG = $2
-NEW_TAG = $3
+REPO_NAME=$1
+CURRENT_TAG=$2
+NEW_TAG=$3
 
 # make sure correct region is set
 aws configure set default.region ${AWS_REGION}
