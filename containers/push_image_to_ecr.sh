@@ -30,7 +30,7 @@ docker tag ${SOURCE_IMAGE} ${TARGET_IMAGE_LATEST}
 docker push ${TARGET_IMAGE_LATEST}
 
 # update dev version
-docker tag ${SOURCE_IMAGE} ${TARGET_IMAGE_LATEST}
+docker tag ${SOURCE_IMAGE} ${TARGET_IMAGE_DEV}
 docker push ${TARGET_IMAGE_DEV}
 
 # push new version
