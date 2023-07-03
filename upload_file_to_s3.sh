@@ -3,7 +3,7 @@
 FILE_NAME=$1
 BUCKET_NAME=$2
 
-if [[ $file == *.zip ]]
+if [[ $FILE_NAME == *.zip ]]
 then
      aws s3 mv --zip-file fileb://${FILE_NAME} s3://${BUCKET_NAME}/${FILE_NAME}
 else
