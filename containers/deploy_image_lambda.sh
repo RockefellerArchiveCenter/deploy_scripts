@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-REGISTRY_URL=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
+REGISTRY_URL=${AWS_ECR_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com
 SOURCE_IMAGE="${DOCKER_REPO}"
 TARGET_IMAGE="${REGISTRY_URL}/${DOCKER_REPO}"
 VERSION="${TIMESTAMP}-${TRAVIS_COMMIT}"
@@ -12,5 +12,5 @@ aws configure set default.region ${AWS_REGION}
 $(aws ecr get-login --no-include-email)
 
 aws lambda update-function-code \
-    --function-name  ${LAMBDA_FUNCTION_NAME} \
+    --function-name  arn:aws:lambda:${AWS_REGION}:${AWS_LAMBDA_ACCOUNT_ID}:function:${LAMBDA_FUNCTION_NAME} \
     --image-uri ${TARGET_IMAGE_VERSIONED}
