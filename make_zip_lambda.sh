@@ -12,4 +12,5 @@ fi
 
 # create zip file
 zip -r ${LAMBDA_FUNCTION_NAME}.zip package
-zip ${LAMBDA_FUNCTION_NAME}.zip ${LAMBDA_HANDLER_CODE}
+cp ${LAMBDA_HANDLER_CODE} basename ${LAMBDA_HANDLER_CODE}
+zip ${LAMBDA_FUNCTION_NAME}.zip basename ${LAMBDA_HANDLER_CODE}
