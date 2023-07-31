@@ -8,13 +8,13 @@ mkdir package
 # install requirements if necessary
 if [ -f requirements.txt ]; then
   pip install -r requirements.txt --target ./package 
+  cd package
+  zip -r ../${LAMBDA_FUNCTION_NAME}.zip .
+  cd ..
 fi
 
 
 
 # create zip file
-cd package
-zip -r ../${LAMBDA_FUNCTION_NAME}.zip package
-cd ..
 cp ${LAMBDA_HANDLER_CODE} basename ${LAMBDA_HANDLER_CODE}
 zip ${LAMBDA_FUNCTION_NAME}.zip basename ${LAMBDA_HANDLER_CODE}
