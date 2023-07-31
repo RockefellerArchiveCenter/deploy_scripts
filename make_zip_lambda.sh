@@ -16,5 +16,5 @@ fi
 
 
 # create zip file
-cp ${LAMBDA_HANDLER_CODE} basename ${LAMBDA_HANDLER_CODE}
-zip ${LAMBDA_FUNCTION_NAME}.zip basename ${LAMBDA_HANDLER_CODE}
+cp ${LAMBDA_HANDLER_CODE} basename "${LAMBDA_HANDLER_CODE}"
+zip ${LAMBDA_FUNCTION_NAME}.zip basename "${LAMBDA_HANDLER_CODE}"
