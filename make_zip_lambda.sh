@@ -6,9 +6,8 @@ LAMBDA_HANDLER_CODE=$2
 # install requirements if necessary
 if [ -f requirements.txt ]; 
 then
-  python --version
-  python3 --version
   mkdir package
+  source ~/virtualenv/python${TRAVIS_PYTHON_VERSION}/bin/activate
   pip install -r requirements.txt --target ./package 
   cd package
   zip -r ../${LAMBDA_FUNCTION_NAME}.zip .
