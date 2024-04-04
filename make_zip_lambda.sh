@@ -7,7 +7,7 @@ mkdir package
 
 # install requirements if necessary
 if [ -f requirements.txt ]; then
-  pip install -r requirements.txt --target ./package 
+  pip3 install -r requirements.txt --target ./package 
   cd package
   zip -r ../${LAMBDA_FUNCTION_NAME}.zip .
   cd ..
