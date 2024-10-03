@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-LAMBDA_FUNCTION_NAME=$1
-LAMBDA_HANDLER_CODE=$2
+LAMBDA_FUNCTION_NAME="$1"
+LAMBDA_HANDLER_CODE_PATHS="${*:2}"
 
 # install requirements if necessary
 if [ -f requirements.txt ]; 
@@ -14,7 +14,11 @@ then
   cd ..
 fi
 
-# create zip file
-BASENAME=$(basename ${LAMBDA_HANDLER_CODE})
-cp ${LAMBDA_HANDLER_CODE} ${BASENAME}
+# Copy handler code files
+for PATH in ${LAMBDA_HANDLER_CODE_PATHS[@]}
+do
+  BASENAME=$(basename ${PATH})
+  cp ${PATH} ${BASENAME}
+done
+
 zip ${LAMBDA_FUNCTION_NAME}.zip ${BASENAME}
