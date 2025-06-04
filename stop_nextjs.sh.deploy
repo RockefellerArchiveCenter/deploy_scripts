@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-pm2 stop ${DAEMON_NAME}
+pm2 stop "${DAEMON_NAME}"
