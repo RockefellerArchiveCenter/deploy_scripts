@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+cd ${ROOT_DIR}
+
+yarn build
