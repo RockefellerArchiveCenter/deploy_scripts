@@ -3,4 +3,4 @@ set -e
 
 cd ${ROOT_DIR}
 
-yarn build
+pm2 reload ${DAEMON_NAME}
