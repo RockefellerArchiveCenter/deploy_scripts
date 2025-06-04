@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+pm2 stop ${DAEMON_NAME}
