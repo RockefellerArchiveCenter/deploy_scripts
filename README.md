@@ -1,10 +1,6 @@
 # deploy_scripts
 Bash scripts used in automated deployments.
 
-## Requirements
-- AWS CLI
-- kubectl
-
 ## Usage
 These scripts are intended to be used in conjunction with AWS CodeDeploy to
 implement continuous deployment, and currently focus on Django and React applications.
@@ -24,18 +20,6 @@ The following environment variables are required by most of these scripts:
 If you are using a subset of these scripts it may not be necessary to supply
 all of these environment variables. For example, when deploying a React application,
 it is not necessary to specify PYTHON_PATH.
-
-### Additional Environment Variables for Container Deployments
-The following environment variables are required for Container deploys.
-- AWS_ACCOUNT_ID - the URL of the ECR Registry to which built images should be pushed
-- AWS_REGION - the AWS Region which contains the ECR Registry
-- AWS_ACCESS_KEY_ID - an AWS Access Key for a user with permissions to push to the ECR Registry
-- AWS_SECRET_ACCESS_KEY - an AWS Secret Access Key for a user with permissions to push to the ECR Registry
-- CLOUDFRONT_DISTRIBUTION_ID - an identifier for a CloudFront Distribution whose cache should be invalidadated (invalidate_cloudfront_cache.sh only)
-- LAMBDA_FUNCTION_NAME - the name of an AWS Lambda function to which the image should be deployed (deploy_image_lambda.sh only)
-- DEPLOYMENT_NAME - name for the deployed pod in Kubernetes (deploy_image_k8s.sh only)
-- DOCKER_REPO - the name of the repository in the registry to which to push
-- TIMESTAMP - current timestamp (should be generated and set once in a CI pipeline)
 
 ## License
 This code is released under the MIT License. See `LICENSE.md` for more information.
