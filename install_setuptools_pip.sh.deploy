@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+cd ${ROOT_DIR}
+
+# install dependencies
+env/bin/pip install setuptools
