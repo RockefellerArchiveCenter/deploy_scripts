@@ -7,5 +7,5 @@ cd ${ROOT_DIR}
 ${PYTHON_PATH} -m venv env --clear
 
 # install dependencies
-env/bin/pip install --upgrade pip
-env/bin/pip install -r requirements.txt
+env/bin/python -m pip install --upgrade "pip>=26.2.2"
+env/bin/python -m pip install -r requirements.txt

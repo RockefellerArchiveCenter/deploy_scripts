@@ -4,4 +4,5 @@ set -e
 cd ${ROOT_DIR}
 
 # install dependencies
-env/bin/pip install setuptools
+env/bin/python -m pip install --upgrade "pip>=26.2.2"
+env/bin/python -m pip install --upgrade setuptools
